@@ -28,19 +28,23 @@ class App extends Component {
         <Container>
           
           <Menu />
+      
+          <Switch>
+            
+            {/* Routes */}
+            <Route path="/" exact component={HomePage} />
+            <PrivateRoute path="/tarefas" component={TarefasPage} />
+            <Route path="/sobre" component={SobrePage} />
+            <Route path="/login" component={LoginPage} />
 
-          {/* Routes */}
-          <Route path="/" exact component={HomePage} />
-          <PrivateRoute path="/tarefas" component={TarefasPage} />
-          <Route path="/sobre" component={SobrePage} />
-          <Route path="/login" component={LoginPage} />
+            {/* URL erro 404  */}
+            <Route render={()=>{
+              return (
+                <div>Página não encontrada</div>
+              );
+            }} />
 
-          {/* URL erro 404  */}
-          <Route render={()=>{
-            return (
-              <div>Página não encontrada</div>
-            );
-          }} />
+          </Switch>
 
         </Container>
       </BrowserRouter>

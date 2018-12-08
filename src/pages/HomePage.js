@@ -11,21 +11,17 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        <Alert color="primary">Olá Mundo</Alert>
-        <Alert color="danger">Olá Mundo</Alert>
+        <Alert color="primary">
+          <Artigo
+            nome="Douglas"
+            texto="Programação Web com React JS"
+          />
+        </Alert>
+
         <Button color="primary">Clique aqui</Button>
 
-        <Artigo
-          nome="Douglas"
-          texto="Programação Web com React JS"
-        />
-        <Artigo
-          nome="Burnes"
-          texto="Programação Web com PHP"
-        />
-
-        <Contador tempo={500} />
-        <Contador numero={100} />
+        <Contador tempo={5} />
+        {/* <Contador numero={100} /> */}
       </div>
     )
   }
