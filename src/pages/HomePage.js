@@ -13,14 +13,20 @@ class HomePage extends Component {
       <div>
         <Alert color="primary">
           <Artigo
-            nome="Douglas"
+            nome="Gustavo"
             texto="Programação Web com React JS"
           />
         </Alert>
 
-        <Button color="primary">Clique aqui</Button>
+        <h1>Buttons </h1>
 
-        <Contador tempo={5} />
+        <Button color="default">Default</Button> 
+        <Button color="primary">Primary</Button> 
+        <Button color="danger">Danger</Button> 
+        <Button color="warning">Warning</Button> 
+        <Button color="success">Success</Button> 
+
+        {/* <Contador tempo={5} /> */}
         {/* <Contador numero={100} /> */}
       </div>
     )
