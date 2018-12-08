@@ -4,7 +4,8 @@ import {
   HashRouter,
   BrowserRouter,
   Link,
-  Route
+  Route,
+  Switch
 } from 'react-router-dom';
 
 import './App.css';
@@ -15,28 +16,28 @@ import TarefasPage from './TarefasPage';
 import SobrePage from './SobrePage';
 import LoginPage from './LoginPage';
 
+
+
+import Menu from "../components/Menu";
+
 class App extends Component {
+
   render() {
     return (
       <BrowserRouter>
         <Container>
           
-          <Nav>
-            <NavItem>
-              <Link className="nav-link" to="/"> Home </Link>
-            </NavItem>
-            <NavItem>
-              <Link className="nav-link" to="/tarefas"> Tarefas </Link>
-            </NavItem>           
-            <NavItem>
-              <Link className="nav-link" to="/sobre"> Sobre </Link>
-            </NavItem>
-          </Nav>
+          <Menu />
 
           <Route path="/" exact component={HomePage} />
           <PrivateRoute path="/tarefas" component={TarefasPage} />
           <Route path="/sobre" component={SobrePage} />
           <Route path="/login" component={LoginPage} />
+          <Route render={()=>{
+            return (
+              <div>Página não encontrada</div>
+            );
+          }} />
 
         </Container>
       </BrowserRouter>
