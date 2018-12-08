@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-
-import { Container } from 'reactstrap';
+import { Container, Nav, NavItem } from 'reactstrap';
 import {
   HashRouter,
+  BrowserRouter,
   Link,
   Route
 } from 'react-router-dom';
@@ -16,21 +16,28 @@ import SobrePage from './SobrePage';
 class App extends Component {
   render() {
     return (
-      <HashRouter>
+      <BrowserRouter>
         <Container>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/tarefas">Tarefas</Link></li>
-            <li><Link to="/sobre">Sobre</Link></li>
-          </ul>
+          
+          <Nav>
+            <NavItem>
+              <Link className="nav-link" to="/"> Home </Link>
+            </NavItem>
+            <NavItem>
+              <Link className="nav-link" to="/tarefas"> Tarefas </Link>
+            </NavItem>           
+            <NavItem>
+              <Link className="nav-link" to="/sobre"> Sobre </Link>
+            </NavItem>
+          </Nav>
 
           <Route path="/" exact component={HomePage} />
           <Route path="/tarefas" component={TarefasPage} />
           <Route path="/sobre" component={SobrePage} />
+
         </Container>
-      </HashRouter>
+      </BrowserRouter>
     );
   }
 }
-
 export default App;
