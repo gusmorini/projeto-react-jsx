@@ -29,10 +29,13 @@ class App extends Component {
           
           <Menu />
 
+          {/* Routes */}
           <Route path="/" exact component={HomePage} />
           <PrivateRoute path="/tarefas" component={TarefasPage} />
           <Route path="/sobre" component={SobrePage} />
           <Route path="/login" component={LoginPage} />
+
+          {/* URL erro 404  */}
           <Route render={()=>{
             return (
               <div>Página não encontrada</div>
@@ -45,3 +48,5 @@ class App extends Component {
   }
 }
 export default App;
+
+// Olhar Ant Design e Office UI Fabric
