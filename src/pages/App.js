@@ -8,10 +8,12 @@ import {
 } from 'react-router-dom';
 
 import './App.css';
+import PrivateRoute from '../components/PrivateRoute';
 
 import HomePage from './HomePage';
 import TarefasPage from './TarefasPage';
 import SobrePage from './SobrePage';
+import LoginPage from './LoginPage';
 
 class App extends Component {
   render() {
@@ -32,8 +34,9 @@ class App extends Component {
           </Nav>
 
           <Route path="/" exact component={HomePage} />
-          <Route path="/tarefas" component={TarefasPage} />
+          <PrivateRoute path="/tarefas" component={TarefasPage} />
           <Route path="/sobre" component={SobrePage} />
+          <Route path="/login" component={LoginPage} />
 
         </Container>
       </BrowserRouter>

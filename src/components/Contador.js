@@ -24,9 +24,9 @@ class Contador extends React.Component {
     }
 
     componentDidUpdate(oldProps, oldState) {
-        console.log('componentDidUpdate');
-        console.log('numero anterior:', oldState.numero);
-        console.log('numero atual:', this.state.numero);
+        // console.log('componentDidUpdate');
+        // console.log('numero anterior:', oldState.numero);
+        // console.log('numero atual:', this.state.numero);
     }
 
     componentWillUnmount() {

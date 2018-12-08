@@ -24,7 +24,7 @@ class TarefasPage extends Component {
 
     const tarefasLinks = TAREFAS.map((tarefa, index) => {
       return (
-        <li>
+        <li key={tarefa.id}>
           <Link to={'/tarefas/' + tarefa.id}> 
             {tarefa.titulo} 
           </Link>
@@ -41,10 +41,8 @@ class TarefasPage extends Component {
         <Route
           path = "/tarefas/:tarefaId"
           render = { props => {
-
             const tarefaId = Number(props.match.params.tarefaId);
-            const tarefa = TAREFAS.find(tar => tar.id == tarefaId);
-
+            const tarefa = TAREFAS.find(tar => tar.id === tarefaId);
             return (
               <div>{tarefa.descricao}</div>
             )
